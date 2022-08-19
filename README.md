@@ -10,7 +10,7 @@
 
 > OSPF ve Static routing protokolleri yapılandırıldı.
 
-> OSPF için routerlar arası iletişim encrypted hale getirildi.
+> OSPF için router1 ve router2 arası iletişim doğrulamalı hale getirildi.
 
 > Router2 ACL yapılandırıldı (WEB SERVER tcp:80 ve DNS SERVER udp:53 harici erişime kapalı).
 
