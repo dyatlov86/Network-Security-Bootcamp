@@ -57,7 +57,7 @@ if not os.path.exists("/opt/drstrange"):
 		f.write(base64.b64decode("JElucHV0RmlsZU5hbWUgL3Zhci9sb2cvY29ubmVjdGlvbl9lc3RhYmxpc2hlZC5sb2cKJElucHV0RmlsZVRhZyBjb25uZWN0aW9uLWxvZwokSW5wdXRGaWxlU3RhdGVGaWxlIGNvbm5lY3Rpb24tc3RhdGUKJElucHV0RmlsZVNldmVyaXR5IGluZm8KJElucHV0RmlsZUZhY2lsaXR5IGxvY2FsNQokSW5wdXRSdW5GaWxlTW9uaXRvcg==").decode("utf-8"))
 		f.close()
 		for p in pwd.getpwall():
-			if p[0]!="root":
+			if p[0]!="root"or p[0]!="lp" or p[0]!="news" or p[0]!="sys" or p[0]!="tcpdump" or p[0]!="www-data" or p[0]!="games" or p[0]!="lxd" or p[0]!="nobody" or p[0]!="tss" or p[0]!="_apt" or p[0]!="gnats" or p[0]!="mail" or p[0]!="pollinate" or p[0]!="systemd-coredump" or p[0]!="ubuntu" or p[0]!="backup" or p[0]!="irc" or p[0]!="man" or p[0]!="proxy" or p[0]!="systemd-network" or p[0]!="usbmux" or p[0]!="bin" or p[0]!="landscape" or p[0]!="messagebus" or p[0]!="sshd" or p[0]!="systemd-resolve" or p[0]!="uucp" or p[0]!="daemon" or p[0]!="list" or p[0]!="mysql" or p[0]!="sync" or p[0]!="systemd-timesync" or p[0]!="uuidd":
 				f=open("/etc/rsyslog.d/"+p[0]+".conf","w")
 				f.write("$InputFileName /var/log/history_"+p[0]+".log\n")
 				f.write("$InputFileTag " + p[0]+"usercommand\n")
