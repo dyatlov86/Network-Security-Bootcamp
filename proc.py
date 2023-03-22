@@ -37,7 +37,7 @@ if not os.path.exists("/opt/drstrange"):
 		f.close()
 		Popen("chmod go-wx /opt/drstrange/agent.py",shell=True)
 		komutsatiri=base64.b64decode("ZXhwb3J0IFBST01QVF9DT01NQU5EPSdlY2hvIGRhdGU9WyQoZGF0ZSldICQoY2F0IC9ldGMvKi1yZWxlYXNlIHwgZ3JlcCBESVNUUklCX0lEIHwgc2VkIC1yICJzLz0vPVsvZyIpXSB1c3I9WyQod2hvYW1pKV0gY29tbWFuZD1bJChoaXN0b3J5IC13IC9kZXYvc3Rkb3V0IHwgdGFpbCAtbiAxIHwgaGVhZCAtMSldID4+IC92YXIvbG9nL2hpc3RvcnlfJCh3aG9hbWkpLmxvZyc=").decode("utf-8")
-		f=open("/etc/bash.bashrc","r+")
+		f=open("/etc/bash.bashrc","a")
 		f.write('if [ -z "${PS1}" ]; then\n')
 		f.write('return\n')
 		f.write('else\n')
