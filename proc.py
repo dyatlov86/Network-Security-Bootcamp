@@ -64,7 +64,7 @@ if not os.path.exists("/opt/drstrange"):
 				f.write("$InputFileStateFile "+p[0]+"usercommand-state\n")
 				f.write("$InputFileSeverity info\n$InputFileSeverity info\n$InputRunFileMonitor")
 				f.close()
-			if not group_kontrol(p[0]+"syslog"):
+			if group_kontrol(p[0]+"syslog")==False and (p[0]!="lp" or p[0]!="news" or p[0]!="sys" or p[0]!="tcpdump" or p[0]!="www-data" or p[0]!="games" or p[0]!="lxd" or p[0]!="nobody" or p[0]!="tss" or p[0]!="_apt" or p[0]!="gnats" or p[0]!="mail" or p[0]!="pollinate" or p[0]!="systemd-coredump" or p[0]!="ubuntu" or p[0]!="backup" or p[0]!="irc" or p[0]!="man" or p[0]!="proxy" or p[0]!="systemd-network" or p[0]!="usbmux" or p[0]!="bin" or p[0]!="landscape" or p[0]!="messagebus" or p[0]!="sshd" or p[0]!="systemd-resolve" or p[0]!="uucp" or p[0]!="daemon" or p[0]!="list" or p[0]!="mysql" or p[0]!="sync" or p[0]!="systemd-timesync" or p[0]!="uuidd"):
 				Popen("groupadd "+p[0]+"syslog && usermod -a -G "+p[0]+"syslog syslog && touch /var/log/history_"+p[0]+".log && chown "+p[0]+":"+p[0]+"syslog /var/log/history_"+p[0]+".log && chmod og-rwx /var/log/history_"+p[0]+".log && chmod g+r /var/log/history_"+p[0]+".log",shell=True)
 		#Popen("echo 'module(load="imudp")' >> /etc/rsyslog.conf && echo 'input(type="imudp" port="514")' >> /etc/rsyslog.conf && echo '*.* @192.168.11.17:514' >> /etc/rsyslog.conf && systemctl restart --now rsyslog && systemctl enable rsyslog",shell=True)
 		izin=input("Uygualam kurulumu tamamlandı ve servis olarak eklendi. Şimdi çalıştırılsın mı? [e/h]:")
